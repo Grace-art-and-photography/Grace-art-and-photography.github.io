@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+h1 {text-align: center;}
+p {text-align: center;}
+div {text-align: center;}
+img {text-align: center;}
+nav {text-align: center;} 
+</style>
+<title>DIY Photoshop</title>
+<meta charset="utf-g">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body style="display: flex; align-items: center; flex-direction: column; ">
+<div class="container-fluid">
+
+<iframe src="diyps2023/index.html" title="diy photoshot" height="606" width="606"></iframe>
+<p> YOu are lokin at the xecution of the fallowing code in an iframe </p>
+
+<pre>
+var img;
+var initials ='ga'; // your initials
+var choice = '1'; // starting choice, so it is not empty
+var screenbg = 250; // off white background
+var lastscreenshot=61; // last screenshot never taken
+
+function preload() {
+// preload() runs once, it may make you wait
+//  img = loadImage('cat.jpg');  // cat.jpg needs to be next to this .js file
+// you can link to an image on your github account
+  img = loadImage('https://dma-git.github.io/images/74.png');
+}
+
+function setup() {
+createCanvas(606, 606);  // canvas size
+background(screenbg);   // use our background screen color
+
+}
+
+function draw() {
+  if (keyIsPressed) {
+    choice = key; // set choice to the key that was pressed
+    clear_print(); // check to see if it is clear screen or save image
+  }
+  if (mouseIsPressed){
+    newkeyChoice(choice);  // if the mouse is pressed call newkeyChoice
+  }
+}
+
+function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
+  // the key mapping if statements that you can change to do anything you want.
+  // just make sure each key option has the a stroke or fill and then what type of 
+  // graphic function
+
+ if (toolChoice == '1' ) {  // first tool Grey mountian
+   
+    fill(134, 136, 138);
+    noStroke();
+    triangle(mouseX-138, mouseY+200, mouseX+138, mouseY+200, mouseX, mouseY);
+    //       left       left      right        right        top          top
+    
+  } else if (toolChoice == '2') { // second tool  2  Grass blades
+    fill(6,209,13);
+    //stroke(32,107,35);
+    triangle(mouseX-5, mouseY+40, mouseX+3, mouseY+40, mouseX, mouseY);
+    
+  } else if (toolChoice == '3') { //  Lake
+    noStroke();
+    fill(196, 228, 245);
+    ellipse(mouseX, mouseY, 150, 100);
+    
+  } else if (toolChoice == '4') {  //grass base
+    noStroke();
+    fill(32, 107, 35);
+    rect(mouseX, mouseY, 400, 200);
+    
+    } else if (toolChoice == '5') { //  clouds
+    noStroke();
+    fill(255, 255, 255);
+    ellipse(mouseX, mouseY, 100, 50);
+    
+    } else if (toolChoice == '6') {  //sky
+    noStroke();
+    fill(138, 216, 255);
+    rect(mouseX, mouseY, 400, 200);
+    
+    } else if (toolChoice == '7' ) {  // snow
+    fill(255, 255, 255);
+    noStroke();
+    triangle(mouseX-50, mouseY+70, mouseX+50, mouseY+70, mouseX, mouseY);
+    
+     }else if (toolChoice == '8' ) {  // line for birds
+    stroke(1);
+    line(mouseX, mouseY, pmouseX, pmouseY);
+    
+    } else if (toolChoice == '9' ) {  // ripples
+    stroke(47, 140, 186);
+    line(mouseX, mouseY, pmouseX, pmouseY);
+    
+        } else if (toolChoice == '0' ) {  //twigs
+    stroke(128, 60, 02);
+    line(mouseX, mouseY, pmouseX, pmouseY);
+    
+    
+     } else if (key == '10') {  
+    stroke(0, 0, 255);
+    testbox(20, 20, 200);
+    testbox(200, 20, 20);
+   
+    
+  }
+ }
+ 
+function testbox(r, g, b) {
+// this is a test function that will show you how you can put your own functions into the sketch
+  x = mouseX;
+  y = mouseY;
+  fill(r, g, b);
+  rect(x-50, y-50, 100, 100);
+
+}
+
+function clear_print() {
+// this will do one of two things, x clears the screen by resetting the background
+// p calls the routine saveme, which saves a copy of the screen
+  if (key == 'x' || key == 'X') {
+    background(screenbg); // set the screen back to the background color
+  } else if (key == 'p' || key == 'P') {
+     saveme();  // call saveme which saves an image of the screen
+  }
+}
+
+function saveme(){
+    //this will save the name as the intials, date, time and a millis counting number.
+    // it will always be larger in value then the last one.
+  filename=initials+day() + hour() + minute() +second();
+  if (second()!=lastscreenshot) { // don't take a screenshot if you just took one
+    saveCanvas(filename, 'jpg');
+    key="";
+  }
+  lastscreenshot=second(); // set this to the current second so no more than one per second
+  
+}
+</pre>
