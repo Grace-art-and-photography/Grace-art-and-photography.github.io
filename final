@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
 <style> 
@@ -8,7 +7,7 @@ div {text-align: center;}
 img {text-align: center;}
 nav {text-align: center;} 
 </style>
-<title>About</title>
+<title>Meme Mashup</title>
 <meta charset="utf-g">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- Latest compiled and minified CSS -->
@@ -17,18 +16,18 @@ nav {text-align: center;}
 <!-- Latest compiled JavaScript -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
-<body style="display: flex; align-items: center; flex-direction: column; background-color:LightCyan">
+<body style="display: flex; align-items: center; flex-direction: column; background-color:LemonChiffon">
 <div class="container-fluid">
 
 <div class="mt-4 p-5 bg-white text-black rounded">
-<h1>About the Artist</h1>
+<h1>Meme Mash up</h1>
 </div>
 
-<nav class="navbar navbar-expand-sm bg-light justify-content-center">
- <div class="container-fluid ">
+<nav class="navbar navbar-expand-sm bg-light">
+ <div class="container-fluid justify-content-center">
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-      <ul class="navbar-nav justify-content-center">
+      <ul class="navbar-nav">
         <li class="nav-item">
 		<a class="nav-link" href="index.html"> Home</a>
 	</li>
@@ -54,8 +53,9 @@ nav {text-align: center;}
 			<li><a class="nav-link" href="netart.html"> Net Art</a></liv>
 			<li><a class="nav-link" href="selfie.html"> iframe selfie</a></liv>
 			<li><a class="nav-link" href="photoshop.html"> DIY photoshop</a></liv>
-			<li><a class="nav-link" href="waldo.html"> Where's Waldo?</a></liv>			
+			<li><a class="nav-link" href="waldo.html"> Where's Waldo?</a></liv>
 			<li><a class="nav-link" href="final.html"> Final</a></liv>
+
 
 		
 		</ul>
@@ -65,10 +65,11 @@ nav {text-align: center;}
  </div>
 </nav>
 
-<center> <img class="img-fluid" src="about.jpg" alt="Photo of Grace Austin" style="width:450px"> </center>
+<p>The objective is to create something meaningful and new from two or more sources. The best possibility is to use the meanings of the two or more memes that you are mashing up that end up creating something new and meaningful.</p>
 <p>
-<center> <p>Since I was 7, I have been composing and capturing photos.  Photography has been a life long passion that I have spent the past 6 years honing skills at San Jose State University.  I have shot a wide variety of photograph genres.  Such includes: Narrative, Editorial, Studio / Portraits, Stage,  Fashion, Food, Product, and Social Justice.  In addition, I have experience in graphic design and videography!  In my free time I enjoy social dancing and painting.</p></center>
+<img class="img-fluid" src="meme.jpg" alt="Photo  of varios memes combined" style="width:900px">
 </div>
+
 
 </body>
 </html>
